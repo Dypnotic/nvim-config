@@ -1,1 +1,3 @@
-#nvim-config
+# My nvim configuration
+
+Made in Lua
