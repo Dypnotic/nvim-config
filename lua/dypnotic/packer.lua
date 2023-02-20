@@ -9,13 +9,8 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use 'folke/tokyonight.nvim'
-	-- use 'nvim-tree/nvim-web-devicons'
-
-	-- For Lua
-	-- use 'nvim-lua/plenary.nvim'
 
 	--LSP
-	-- use 'neovim/nvim-lspconfig'
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
@@ -39,9 +34,6 @@ use {
   }
 }
 	-- Telescope
-	-- use {'nvim-telescope/telescope.nvim', branch = '0.1.x'}
-	-- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		-- or                            , branch = '0.1.x',
@@ -49,12 +41,15 @@ use {
 	}
 
 	-- Treesitter
-	 use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	-- 	run = function()
-	-- 		local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-	-- 		ts_update()
-	-- 	end,
-	-- }
-	-- use 'nvim-tree/nvim-web-devicons'
+	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+	-- nvim tree
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
 end
 )
