@@ -37,3 +37,11 @@ lsp.on_attach(function(client,bufnr)
 end)
 
 lsp.setup()
+
+vim.diagnostic.config({
+	-- virtual_text = true
+	float = {
+		source = 'always',
+		border = border
+	}
+})
