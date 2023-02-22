@@ -61,5 +61,13 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
+
+	-- Nvim-cokeline
+	vim.opt.termguicolors = true
+  use({
+    'noib3/nvim-cokeline',
+    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+  })
+	
 end
 )
