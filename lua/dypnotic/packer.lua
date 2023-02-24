@@ -37,7 +37,19 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
 		-- or                            , branch = '0.1.x',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		requires = { { 'nvim-lua/plenary.nvim' } },
+	}
+
+	-- Telescope file-browser
+	use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+	}
+
+	-- Telescope Projects
+	use {
+		"nvim-telescope/telescope-project.nvim",
+		requires = { "nvim-telescope/telescope.nvim" }
 	}
 
 	-- Treesitter
@@ -64,10 +76,30 @@ return require('packer').startup(function(use)
 
 	-- Nvim-cokeline
 	vim.opt.termguicolors = true
-  use({
-    'noib3/nvim-cokeline',
-    requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-  })
-	
+	use({
+		'noib3/nvim-cokeline',
+		requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+	})
+
+	-- Comment.nvim
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
+
+	-- trouble.nvim
+	use {
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
 end
 )

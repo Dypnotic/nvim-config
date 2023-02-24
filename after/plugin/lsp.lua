@@ -12,11 +12,8 @@ lsp.ensure_installed({
 	'rust_analyzer',
 	'cssls',
 	'html',
-	'svelte',
 	'vimls',
 	'omnisharp',
-	'astro'
-
 })
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
@@ -39,7 +36,8 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-	-- virtual_text = true
+	virtual_text = true,
+	signs = true,
 	float = {
 		source = 'always',
 		border = border
