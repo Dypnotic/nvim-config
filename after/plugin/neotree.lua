@@ -1,6 +1,6 @@
 
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-vim.cmd([[ Neotree show filesystem ]])
+-- vim.cmd([[ Neotree show filesystem ]])
 
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree<CR>", opts)
 
