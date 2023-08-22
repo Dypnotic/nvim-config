@@ -9,11 +9,8 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'lua_ls',
-	'rust_analyzer',
 	'cssls',
 	'html',
-	'vimls',
-	'omnisharp',
 })
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
