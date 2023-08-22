@@ -48,7 +48,9 @@ return require('packer').startup(function(use)
 		},
 	}
 
-
+	use {
+		'f-person/git-blame.nvim'
+	}
 
 	-- Treesitter
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -75,7 +77,7 @@ return require('packer').startup(function(use)
 	-- Nvim-cokeline
 	vim.opt.termguicolors = true
 	use({
-		'noib3/nvim-cokeline',
+		'willothy/nvim-cokeline',
 		requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
 	})
 
