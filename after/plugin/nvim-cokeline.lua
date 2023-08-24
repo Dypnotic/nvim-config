@@ -1,3 +1,4 @@
+vim.opt.termguicolors = true
 local get_hex = require('cokeline/utils').get_hex
 require('cokeline').setup {
 	components = {
