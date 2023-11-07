@@ -18,6 +18,8 @@ local plugins = {
 	'f-person/git-blame.nvim',
 	-- Null-ls
 	'jose-elias-alvarez/null-ls.nvim',
+	-- Plenary
+	'nvim-lua/plenary.nvim',
 	-- Nvim-cokeline
 	'willothy/nvim-cokeline',
 	-- lualine

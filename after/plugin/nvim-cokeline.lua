@@ -1,5 +1,4 @@
 vim.opt.termguicolors = true
-local get_hex = require('cokeline/utils').get_hex
 require('cokeline').setup {
 	components = {
 		{
@@ -30,9 +29,6 @@ require('cokeline').setup {
 		{
 			text = function(buffer)
 				return buffer.is_modified and " ● " or " "
-			end,
-			fg = function(buffer)
-				return buffer.is_focused and get_hex('Normal', 'bg') or get_hex('Normal', 'fg')
 			end,
 		},
 	}
