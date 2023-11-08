@@ -68,7 +68,7 @@ return {
 			lsp_zero.on_attach(function(_, bufnr)
 				-- see :help lsp-zero-keybindings
 				-- to learn the available actions
-				lsp_zero.default_keymaps({ buffer = bufnr, remap = false })
+				lsp_zero.default_keymaps({ buffer = bufnr })
 				local opts = { buffer = bufnr, remap = false }
 				vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 				vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
