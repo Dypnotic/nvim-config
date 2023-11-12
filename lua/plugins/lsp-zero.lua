@@ -42,8 +42,8 @@ return {
 				mapping = cmp.mapping.preset.insert({
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<CR>'] = cmp.mapping.confirm({ select = false }),
-					['<Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
-					['<S-Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
+					['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
+					['<Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
 					['<C-f>'] = cmp_action.luasnip_jump_forward(),
 					['<C-b>'] = cmp_action.luasnip_jump_backward(),
 				})
