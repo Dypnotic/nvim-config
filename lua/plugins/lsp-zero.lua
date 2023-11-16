@@ -28,10 +28,10 @@ return {
 			local lsp_zero = require('lsp-zero')
 			lsp_zero.extend_cmp()
 			lsp_zero.set_sign_icons({
-				error = '🤬',
-				warn = '🔔',
-				hint = '💚',
-				info = '💦'
+				error = '⛔',
+				warn = '☢️',
+				hint = '♻️',
+				info = '💡'
 			})
 			-- And you can configure cmp even more, if you want to.
 			local cmp = require('cmp')
