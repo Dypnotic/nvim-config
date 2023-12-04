@@ -3,8 +3,7 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
 		config = function()
-			local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
-			ft_to_parser.mdx = "markdown"
+			vim.treesitter.language.register("mdx", "markdown")
 			require 'nvim-treesitter.configs'.setup {
 				-- A list of parser names, or "all" (the four listed parsers should always be installed)
 				ensure_installed = { "c", "lua", "vim", "javascript", "typescript", "rust", "css", "scss", "html", "markdown" },
