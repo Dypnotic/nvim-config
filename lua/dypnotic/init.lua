@@ -1,4 +1,5 @@
 require('dypnotic.set')
 require('dypnotic.remap')
 require('dypnotic.filetype')
+require('dypnotic.statusline')
 require('dypnotic.lazy')
