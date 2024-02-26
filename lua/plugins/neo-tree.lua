@@ -10,7 +10,7 @@ return {
 		config = function()
 			vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 			-- vim.cmd([[ Neotree show filesystem ]])
-			vim.keymap.set("n", "<leader>e", "<cmd>Neotree<CR>")
+			vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal left<CR>")
 
 			require("neo-tree").setup({
 				filesystem = {
