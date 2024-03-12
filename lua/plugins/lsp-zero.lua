@@ -89,6 +89,21 @@ return {
 						local lua_opts = lsp_zero.nvim_lua_ls()
 						require('lspconfig').lua_ls.setup(lua_opts)
 					end,
+					denols = function()
+						local nvim_lsp = require('lspconfig')
+						local deno_opts = {
+							root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
+						}
+						nvim_lsp.denols.setup(deno_opts)
+					end,
+					tsserver = function()
+						local nvim_lsp = require('lspconfig')
+						local tsserver_opts = {
+							root_dir = nvim_lsp.util.root_pattern("package.json"),
+							single_file_support = false,
+						}
+						nvim_lsp.deno_ls.setup(tsserver_opts)
+					end
 				}
 			})
 			--Enable (broadcasting) snippet capability for completion
