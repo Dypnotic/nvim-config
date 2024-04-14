@@ -9,5 +9,6 @@ return {
 		config = function ()
 			vim.cmd([[colorscheme tokyonight]])
 		end
-	}
+	},
+	{ "rose-pine/neovim", name = "rose-pine" }
 }
