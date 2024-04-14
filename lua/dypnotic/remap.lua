@@ -9,3 +9,9 @@ map('n', '<leader>s', '<cmd>tabsplit<CR>', {noremap = true})
 map('n', '<leader>Q', '<cmd>qa<CR>', {noremap = true})
 map('n', '<leader>q', '<cmd>bd<CR>', {noremap = true})
 map('n', '<leader>w', '<cmd>w<CR>', {noremap = true})
+
+
+map('', '<C-v>', '+p<CR>', { noremap = true, silent = true})
+map('!', '<C-v>', '<C-R>+', { noremap = true, silent = true})
+map('t', '<C-v>', '<C-R>+', { noremap = true, silent = true})
+map('v', '<C-v>', '<C-R>+', { noremap = true, silent = true})
