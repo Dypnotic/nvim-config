@@ -2,31 +2,33 @@ return {
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		branch = "dev", -- v3
 		event = 'VeryLazy',
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xq",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
 		},
-		config = function()
-			vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-				{ silent = true, noremap = true }
-			)
-			vim.keymap.set("n", "<leader>xo", "<cmd>TroubleToggle<cr>",
-				{ silent = true, noremap = true }
-			)
-
-			local signs = {
-				Error = "⛔",
-				Warn = "☢️",
-				Hint = "♻️",
-				Info = "💡",
-			}
-
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-			end
-		end
+		opts = {
+			auto_close = true,
+			focus = true,
+		},
 	},
 }
