@@ -36,7 +36,6 @@ return {
 						".*%.gif",
 						".*%.tif",
 						".*%.tiff",
-						".*%.png",
 					}
 				},
 				extensions = {
@@ -56,7 +55,9 @@ return {
 			}
 
 			local project = require 'telescope'.load_extension('project')
+			local noice = require 'telescope'.load_extension('noice')
 		  vim.keymap.set('n', '<leader>fp', project.project, {})
+		  vim.keymap.set('n', '<leader>fn', noice.noice, {})
 		end
 	},
 }
