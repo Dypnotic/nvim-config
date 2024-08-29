@@ -69,10 +69,8 @@ return {
 
 			local project = require 'telescope'.load_extension('project')
 			local file_browser = require 'telescope'.load_extension('file_browser')
-			local noice = require 'telescope'.load_extension('noice')
 			vim.keymap.set('n', '<leader>fp', project.project, {})
 			vim.keymap.set('n', '<leader>fe', ':Telescope file_browser path=%:p:h select_buffer=true<CR>')
-			vim.keymap.set('n', '<leader>fn', noice.noice, {})
 		end
 	},
 }
