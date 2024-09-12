@@ -5,7 +5,6 @@ return {
 		dependencies = {
 			{ 'nvim-lua/plenary.nvim' },
 			{ 'nvim-telescope/telescope-project.nvim' },  -- Telescope Projects
-			{ 'nvim-telescope/telescope-file-browser.nvim' } -- Telescope File Browser
 		},
 		config = function()
 			local builtin = require('telescope.builtin')
