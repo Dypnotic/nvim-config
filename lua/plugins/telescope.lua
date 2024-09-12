@@ -36,7 +36,18 @@ return {
 						".*%.gif",
 						".*%.tif",
 						".*%.tiff",
-					}
+					},
+					mappings = {
+						["i"] = {
+							-- your custom insert mode mappings
+							['<c-d>'] = require('telescope.actions').delete_buffer
+						},
+						["n"] = {
+							-- your custom normal mode mappings
+							['<c-d>'] = require('telescope.actions').delete_buffer
+						},
+					},
+
 				},
 				extensions = {
 					project = {
@@ -44,33 +55,18 @@ return {
 						-- order_by = "asc",
 						-- search_by = "title",
 						theme = "dropdown",
-						sync_with_nvim_tree = true, -- default false
+						-- sync_with_nvim_tree = true, -- default false
 						-- default for on_project_selected = find project files
 						on_project_selected = function(prompt_bufnr)
 							-- Do anything you want in here.
 							project_actions.change_working_directory(prompt_bufnr, false)
 						end
 					},
-					file_browser = {
-						-- theme = "dropdown",
-						-- disables netrw and use telescope-file-browser in its place
-						hijack_netrw = true,
-						mappings = {
-							["i"] = {
-								-- your custom insert mode mappings
-							},
-							["n"] = {
-								-- your custom normal mode mappings
-							},
-						},
-					}
 				}
 			}
 
 			local project = require 'telescope'.load_extension('project')
-			local file_browser = require 'telescope'.load_extension('file_browser')
 			vim.keymap.set('n', '<leader>fp', project.project, {})
-			vim.keymap.set('n', '<leader>fe', ':Telescope file_browser path=%:p:h select_buffer=true<CR>')
 		end
 	},
 }
