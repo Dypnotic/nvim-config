@@ -23,7 +23,7 @@ vim.g.netrw_sort_by = "exten"
 -- 1 : long listing (one file per line with timestamp information and file size)
 -- 2 : wide listing (multiple files in columns)
 -- 3 : tree style listing
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 1
 
 -- Patterns for hiding files, e.g. node_modules
 -- NOTE: this works by reading '.gitignore' file
