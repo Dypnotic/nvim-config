@@ -1,14 +1,9 @@
 return {
 	{
 		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
+		branch = 'v4.x',
 		lazy = true,
 		config = false,
-		init = function()
-			-- Disable automatic setup, we are doing it manually
-			vim.g.lsp_zero_extend_cmp = 0
-			vim.g.lsp_zero_extend_lspconfig = 0
-		end,
 	},
 	{
 		'williamboman/mason.nvim',
@@ -32,6 +27,9 @@ return {
 			local cmp_action = lsp_zero.cmp_action()
 
 			cmp.setup({
+				sources = {
+					{ name = 'nvim_lsp' },
+				},
 				formatting = lsp_zero.cmp_format(),
 				mapping = cmp.mapping.preset.insert({
 					['<C-Space>'] = cmp.mapping.complete(),
@@ -40,7 +38,12 @@ return {
 					['<Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
 					['<C-f>'] = cmp_action.luasnip_jump_forward(),
 					['<C-b>'] = cmp_action.luasnip_jump_backward(),
-				})
+				}),
+				snippet = {
+					expand = function(args)
+						vim.snippet.expand(args.body)
+					end,
+				},
 			})
 		end
 	},
@@ -52,12 +55,18 @@ return {
 		event = { 'BufReadPre', 'BufNewFile' },
 		dependencies = {
 			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'williamboman/mason.nvim' },
 			{ 'williamboman/mason-lspconfig.nvim' },
 		},
 		config = function()
 			-- This is where all the LSP shenanigans will live
 			local lsp_zero = require('lsp-zero')
-			lsp_zero.extend_lspconfig()
+			lsp_zero.extend_lspconfig({
+				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				lsp_attach = lsp_attach,
+				float_border = 'rounded',
+				sign_text = true,
+			})
 
 			lsp_zero.set_sign_icons({
 				error = '󰅙',
@@ -86,7 +95,19 @@ return {
 					lua_ls = function()
 						-- (Optional) Configure lua language server for neovim
 						local lua_opts = lsp_zero.nvim_lua_ls()
-						require('lspconfig').lua_ls.setup(lua_opts)
+						local nvim_lsp = require('lspconfig')
+						nvim_lsp.lua_ls.setup(lua_opts)
+						-- Deno Setup
+						nvim_lsp.denols.setup {
+							on_attach = on_attach,
+							root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+						}
+						-- Typescript for Deno Setup
+						nvim_lsp.ts_ls.setup {
+							on_attach = on_attach,
+							root_dir = nvim_lsp.util.root_pattern("package.json"),
+							single_file_support = false
+						}
 					end,
 				}
 			})
