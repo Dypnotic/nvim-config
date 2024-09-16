@@ -16,21 +16,20 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require('rose-pine').setup {
+			require("rose-pine").setup({
 				styles = {
 					transparency = true
 				},
 				highlight_groups = {
-					TelescopeBorder = { fg = "highlight_high", bg = "none" },
+					TelescopeBorder = { fg = "subtle", bg = "none" },
 					TelescopeNormal = { bg = "none" },
-					TelescopePromptNormal = { bg = "base" },
+					TelescopePromptNormal = { bg = "none" },
 					TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-					TelescopeSelection = { fg = "text", bg = "base" },
+					TelescopeSelection = { fg = "text", bg = "none" },
 					TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
-					CursorLine = { bg = 'none'},
 				}
-			}
-			vim.cmd([[colorscheme rose-pine-main]])
+			})
+			vim.cmd([[colorscheme rose-pine-moon]])
 		end
 	}
 }
