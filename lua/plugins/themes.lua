@@ -17,9 +17,9 @@ return {
 		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
-				styles = {
-					transparency = true
-				},
+				-- styles = {
+				-- 	transparency = true
+				-- },
 				highlight_groups = {
 					TelescopeBorder = { fg = "subtle", bg = "none" },
 					TelescopeNormal = { bg = "none" },
