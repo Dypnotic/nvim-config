@@ -35,6 +35,7 @@ return {
 						".*%.gif",
 						".*%.tif",
 						".*%.tiff",
+						"%__virtual.cs$",
 					},
 					mappings = {
 						["i"] = {
