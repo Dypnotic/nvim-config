@@ -1,4 +1,3 @@
-
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
@@ -6,17 +5,18 @@ return {
 	opts = {
 		-- add any opts here
 		-- for example
-		provider = "gemini",
+		providers = {
+			gemini = {
+				-- setup api key as GEMINI_API_KEY
+				-- @see https://ai.google.dev/gemini-api/docs/models/gemini
+				endpoint = "https://generativelanguage.googleapis.com/v1beta/models/",
+				model = "gemini-2.5-flash",
+				temperature = 0,
+				max_tokens = 4096,
+			},
+		},
 		behaviour = {
 			auto_suggestions = false, -- Experimental stage
-		},
-		gemini = {
-			-- setup api key as GEMINI_API_KEY
-			-- @see https://ai.google.dev/gemini-api/docs/models/gemini
-			endpoint = "https://generativelanguage.googleapis.com/v1beta/models/",
-			model = "gemini-2.0-flash",
-			temperature = 0,
-			max_tokens = 4096,
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
