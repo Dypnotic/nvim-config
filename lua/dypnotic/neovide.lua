@@ -4,7 +4,7 @@ if vim.g.neovide then
 	vim.g.neovide_remember_window_size = true;
 	vim.g.neovide_cursor_animation_length = 0.03;
 	vim.g.neovide_cursor_vfx_mode = "railgun";
-	vim.g.neovide_scroll_animation_lenght = 0.1;
+	vim.g.neovide_scroll_animation_length = 0.1;
 	vim.g.neovide_floating_shadow = false;
 	vim.g.nevoide_fullscreen = true;
 	vim.g.neovide_title_background_color = "green"
