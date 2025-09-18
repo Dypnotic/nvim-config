@@ -13,6 +13,7 @@ vim.opt.smartcase = true
 vim.opt.copyindent = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
+vim.opt.list = true
 
 vim.g.mapleader = ' '
 
